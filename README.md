@@ -1,4 +1,6 @@
-# my-project
+# Vue Plaground
+
+The intentention of this project is to test functionalities from vue whithout disrrupting existing projects
 
 ## Project setup
 ```
