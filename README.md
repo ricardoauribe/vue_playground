@@ -2,6 +2,8 @@
 
 The intentention of this project is to test functionalities from vue whithout disrrupting existing projects
 
+TODO: Add D3, and input file and create a customa graph
+
 ## Project setup
 ```
 npm install
