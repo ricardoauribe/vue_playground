@@ -12,7 +12,7 @@ export default {
 	data(){
 		return {
 			book: {
-				name: "Learning",
+				name: "Example for a D3 Graph",
 				author: "Richard Uribe"
 			}
 		}
