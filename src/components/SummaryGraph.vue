@@ -6,13 +6,14 @@
 </template>
 
 <script>
-  import * as d3 from "d3";
+  //import * as d3 from "d3";
 
   export default {
     name: 'SummaryGraph',
     data() {
       return {
         data: [],
+        ready: true,
         h: 400,
         w: 560,
       }

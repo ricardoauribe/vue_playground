@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <MyComponent/>
+    <summary-graph/>
   </div>
 </template>
 
 <script>
 import MyComponent from './components/MyComponent.vue'
+import SummaryGraph from './components/SummaryGraph.vue'
 
 export default {
   name: 'App',
   components: {
-    MyComponent
+    MyComponent,
+    SummaryGraph
   }
 }
 </script>
