@@ -15,7 +15,7 @@
 <script>
   import * as d3 from "d3";
   import axios from 'axios';
-  
+
   export default {
     name: 'SummaryGraph',
     data() {
@@ -32,16 +32,17 @@
     },
     mounted() {
 		axios
-			.get('http://localhost:5000/api/v1/patients')
+			.get('http://localhost:5000/api/v1/graph')
 			.then(response => {
-				this.data = response.data.body.patients
+				this.data = response.data.body
+        console.log(this.data)
 			})
 			.catch(error => {
 				console.log(error)
 				this.errored = true
 			})
 			.finally(() => this.loading = false)
-	  },
+    },
     methods: {
       track_movement: function(event){
         const m = d3.pointer(event)
