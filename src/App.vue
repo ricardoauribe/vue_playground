@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Nutrition App</h1>
     <MyComponent/>
     <summary-graph/>
   </div>
