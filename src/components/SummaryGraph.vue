@@ -6,7 +6,18 @@
         <g >
           <rect rx="0" ry="0" class="mouse_tracker" @mousemove="track_movement($event)"/>
         </g>
-      
+        <!-- axis bottom -->
+          <g class="x-axis" fill="none" :transform="`translate(0, ${height - marginBottom})`">
+            <path stroke="black" :d="`M0.5,6V0.5H${width}.5V6`"></path>
+            <g class="tick" opacity="1" font-size="10" font-family="sans-serif" text-anchor="middle" 
+              v-for="(month, index) in months"
+              :key="index"
+              :transform="`translate(${month.x} , 0)`">
+              <line stroke="currentColor" y2="6"></line>
+              <text fill="currentColor" y="9" dy="0.71em" :transform="`translate(0, 0)`">{{ month.xLabel }}</text>
+            </g>
+          </g>
+    
       </g>
     </svg>
   </div>
@@ -43,6 +54,19 @@
 				this.errored = true
 			})
 			.finally(() => this.loading = false)
+    },
+    computed:{
+      months() {
+        let spacer = this.width / 11
+        let months = this.data.map(d => {
+          return {
+            xLabel: d.x,
+            x: d.id * spacer,
+            y: d.y
+          };
+        });
+        return months;
+      },
     },
     methods: {
       track_movement: function(event){
