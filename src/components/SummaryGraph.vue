@@ -35,6 +35,7 @@
 			.get('http://localhost:5000/api/v1/graph')
 			.then(response => {
 				this.data = response.data.body.items
+        console.log("Here is the array")
         console.log(this.data)
 			})
 			.catch(error => {
