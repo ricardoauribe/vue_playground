@@ -14,7 +14,7 @@
               :key="index"
               :transform="`translate(${month.x} , 0)`">
               <line stroke="currentColor" y2="6"></line>
-              <text fill="currentColor" y="9" dy="0.71em" :transform="`translate(0, 0)`">{{ month.xLabel }}</text>
+              <text fill="currentColor" y="9" dy="0.71em" :transform="`translate(0, 0)`">{{ month.id }}</text>
             </g>
           </g>
     
@@ -56,11 +56,17 @@
 			.finally(() => this.loading = false)
     },
     computed:{
+      height(){
+        return this.h - this.marginTop -this.marginTop;
+      },
+      width(){
+        return this.w - this.marginLeft -this.marginRight;
+      },
       months() {
         let spacer = this.width / 11
         let months = this.data.map(d => {
           return {
-            xLabel: d.x,
+            id: d.x,
             x: d.id * spacer,
             y: d.y
           };
