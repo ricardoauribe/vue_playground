@@ -2,7 +2,9 @@
 
 The intentention of this project is to test functionalities from vue whithout disrrupting existing projects. the project itself is running under VueJs 2.6
 
-TODO: Add D3, and input file and create a customa graph
+This project contains a D3 sample graph which uses reactive integration with Vuejs 
+
+TODO: Add further explanation on this integration
 
 ## Project setup
 ```
