@@ -4,7 +4,7 @@ The intentention of this project is to test functionalities from vue whithout di
 
 This project contains a D3 sample graph which uses reactive integration with Vuejs 
 
-TODO: Add further explanation on this integration
+TODO: Add further explanation on this integration, how to keep static html and reactive as a reactive component to a data behaviour through js (vue)
 
 ## Project setup
 ```

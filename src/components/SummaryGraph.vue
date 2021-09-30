@@ -29,6 +29,18 @@
               <text fill="currentColor" x="-9" dy="0.3em">{{ commaFormat(tick) }}</text>
             </g>
           </g>
+        <!-- Series -->
+          <g class="cy_band" :transform="`translate(0, ${-marginBottom})`">
+            <path class="band_cy" :d="cy_band"></path>
+          </g>
+          <!-- PPY -->
+          <g v-if="years.ppy" class="ppy" :transform="`translate(0, ${-marginBottom})`">
+            <circle class="dot_ppy"
+              v-for="(dot, index) in ppy"
+              :key="index"
+              :cx="dot.width" :cy="dot.height - marginBottom" r="3" />
+            <path class="line_ppy" :d="ppy_line"></path>
+          </g>
       </g>
     </svg>
   </div>
@@ -50,6 +62,7 @@
         marginRight: 10,
         marginTop: 10,
         marginBottom: 20,
+        loading: false
       }
     },
     mounted() {
@@ -57,7 +70,6 @@
 			.get('http://localhost:5000/api/v1/graph')
 			.then(response => {
 				this.data = response.data.body.items
-        console.log("Here is the array")
         console.log(this.data)
 			})
 			.catch(error => {
